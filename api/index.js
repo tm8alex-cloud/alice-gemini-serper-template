@@ -161,7 +161,10 @@ export default async function handler(req, res) {
     ""
   ).trim();
 
-  const oldHistory = safeHistory(body?.state?.session?.history);
+ const oldHistory = safeHistory(
+  body?.state?.session?.history ??
+  body?.state?.user?.history
+);
 
   if (!text) {
     return res.status(200).json(aliceResponse(
