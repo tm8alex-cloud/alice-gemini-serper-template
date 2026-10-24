@@ -36,7 +36,8 @@ function aliceResponse(text, endSession = false, history = []) {
       text: fitAliceText(text),
       end_session: endSession
     },
-    session_state: { history }
+    session_state: { history },
+    user_state_update: { history }
   };
 }
 
